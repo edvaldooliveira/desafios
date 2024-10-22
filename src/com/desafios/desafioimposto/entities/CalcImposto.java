@@ -15,5 +15,11 @@ public class CalcImposto {
         return ganhoCapital * 0.2;
     }
 
+    public double impostoBrutoTotal(double impostoBrutoTotal) {
+        return impostoBrutoTotal * 0.3;
+    }
+
+
+
 
 }
