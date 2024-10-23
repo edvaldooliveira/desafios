@@ -12,4 +12,8 @@ public class CalcSalario {
             return salario * 0.20;  // 20% de imposto
         }
     }
+
+    public static double calcularImpostoSalario(double rendaAnualSalario) {
+      return rendaAnualSalario / 12;
+    }
 }

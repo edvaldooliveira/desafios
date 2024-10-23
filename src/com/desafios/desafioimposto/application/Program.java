@@ -1,6 +1,6 @@
 package com.desafios.desafioimposto.application;
 
-import com.desafios.desafioimposto.entities.CalcImposto;
+import com.desafios.desafioimposto.entities.rendaMensal;
 import com.desafios.desafioimposto.entities.CalcSalario;
 
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        CalcImposto calcImposto = new CalcImposto();
+        rendaMensal calcImposto = new rendaMensal();
         CalcSalario calcSalario = new CalcSalario();
 
 

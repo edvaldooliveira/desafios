@@ -1,6 +1,6 @@
 package com.desafios.desafioimposto.entities;
 
-public class CalcImposto {
+public class rendaMensal {
 
     //Calculo do imposto
     public double  impostoSalario(double rendaSalario) {
