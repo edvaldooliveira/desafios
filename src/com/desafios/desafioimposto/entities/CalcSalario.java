@@ -13,7 +13,7 @@ public class CalcSalario {
         }
     }
 
-    public static double calcularImpostoSalario(double rendaAnualSalario) {
+    public static double rendaAnualSalario(double rendaAnualSalario) {
       return rendaAnualSalario / 12;
     }
 }
