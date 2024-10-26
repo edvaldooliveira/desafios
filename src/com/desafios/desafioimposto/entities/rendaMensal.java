@@ -15,7 +15,10 @@ public class rendaMensal {
         return ganhoCapital * 0.2;
     }
 
+
+
     public double GastosDedutiveis(double impostoBrutoTotal) {
+
         return impostoBrutoTotal * 0.30;
     }
 

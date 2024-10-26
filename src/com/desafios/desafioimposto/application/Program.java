@@ -25,8 +25,8 @@ public class Program {
 
       double resolt =   rendaMensal.impostoSalario(rendaAnual);
       double resoltServico =  rendaMensal.impostoServicos(prestacaoServico);
-        double resoltCapital = rendaMensal.impostoCapital(ganhoCapital);
-       double resoltDedutivies = rendaMensal.GastosDedutiveis(gastosMedicos);
+      double resoltCapital = rendaMensal.impostoCapital(ganhoCapital);
+      double resoltDedutivies = rendaMensal.GastosDedutiveis(gastosMedicos);
 
 
         System.out.println("\nRELATÓRIO DE IMPOSTO DE RENDA\n");
@@ -37,7 +37,7 @@ public class Program {
         System.out.printf("Imposto sobre serviços: %.2f\n", resoltServico);
         System.out.printf("Imposto sobre ganho de capital: %.2f\n ", resoltCapital);
         System.out.println("\nDEDUÇÕES: ");
-       // System.out.printf("Máximo dedutível: %.2f\n ", resoltDedutivies );
+        System.out.printf("Máximo dedutível: %.2f\n ", resoltDedutivies );
 
 
         sc.close();
