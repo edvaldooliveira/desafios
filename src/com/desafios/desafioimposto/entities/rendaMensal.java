@@ -18,9 +18,18 @@ public class rendaMensal {
 
 
     public double GastosDedutiveis(double impostoBrutoTotal) {
-
         return impostoBrutoTotal * 0.30;
     }
+
+    public double GastosMedicoEducacional(double gastosMedicos, double gastosEducacionais ) {
+        return gastosMedicos + gastosEducacionais;
+    }
+
+    //public double impostoBrutoTotal(double resolt, double resoltServico, double resoltCapital ) {
+      //return resolt + resoltServico + resoltCapital;
+    //}
+
+
 
 
 
