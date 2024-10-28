@@ -1,6 +1,6 @@
 package com.desafios.desafioimposto.application;
 
-import com.desafios.desafioimposto.entities.rendaMensal;
+import com.desafios.desafioimposto.entities.RendaAnualCalculadora;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,55 +10,53 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        rendaMensal rendaMensal = new rendaMensal();
+        RendaAnualCalculadora calculadora = new RendaAnualCalculadora();
 
 
+        // Entrada de dados
         System.out.print("\nRenda anual com salário: ");
-        double rendaAnual = sc.nextDouble();
+        double rendaAnualSalario = sc.nextDouble();
         System.out.print("Renda anual com prestação de serviço: ");
-        double prestacaoServico = sc.nextDouble();
+        double rendaAnualServico = sc.nextDouble();
         System.out.print("Renda anual com ganho de capital: ");
-        double ganhoCapital = sc.nextDouble();
+        double rendaAnualCapital = sc.nextDouble();
 
-        //Verificar estas funcões
         System.out.print("Gastos médicos: ");
         double gastosMedicos = sc.nextDouble();
         System.out.print("Gastos educacionais: ");
         double gastosEducacionais = sc.nextDouble();
 
+        // Cálculos de impostos
+        double impostoSalario = calculadora.impostoSalario(rendaAnualSalario);
+        double impostoServico = calculadora.impostoServico(rendaAnualServico);
+        double impostoCapital = calculadora.impostoCapital(rendaAnualCapital);
 
-      double resolt =   rendaMensal.impostoSalario(rendaAnual);
-      double resoltServico =  rendaMensal.impostoServicos(prestacaoServico);
-      double resoltCapital = rendaMensal.impostoCapital(ganhoCapital);
+        double impostoBrutoTotal = impostoSalario + impostoServico + impostoCapital;
 
-      //Verificar este codigo
-      double resoltDedutivies = rendaMensal.GastosDedutiveis(gastosMedicos);
-      double gEducacionais = rendaMensal.GastosMedicoEducacional(gastosMedicos, gastosEducacionais);
+        // Cálculo de deduções
+        double maximoDedutivel = impostoBrutoTotal * 0.3;
+        double gastosDedutiveis = Math.min(gastosMedicos + gastosEducacionais, maximoDedutivel);
+        double gDedutiveis =  gastosEducacionais + gastosMedicos;
+        double impostoFinal = impostoBrutoTotal - gastosDedutiveis;
 
-
-
+        // Exibição do relatório
         System.out.println("\nRELATÓRIO DE IMPOSTO DE RENDA\n");
-        System.out.println("CONSOLIDADO DE RENDA: ");
+        System.out.println("CONSOLIDADO DE RENDA:");
+        System.out.printf("Imposto sobre salário: %.2f\n", impostoSalario);
+        System.out.printf("Imposto sobre serviços: %.2f\n", impostoServico);
+        System.out.printf("Imposto sobre ganho de capital: %.2f\n", impostoCapital);
+
+        System.out.println("\nDEDUÇÕES:");
+        System.out.printf("Máximo dedutível: %.2f\n", maximoDedutivel);
+        System.out.printf("Gastos dedutíveis: %.2f\n", gDedutiveis);
 
 
-        System.out.printf("Imposto sobre salário: %.2f\n", resolt);
-        System.out.printf("Imposto sobre serviços: %.2f\n", resoltServico);
-        System.out.printf("Imposto sobre ganho de capital: %.2f\n ", resoltCapital);
-
-        //Verificar Máximo dedutível!
-
-        System.out.println("\nDEDUÇÕES: ");
-        System.out.printf("Máximo dedutível: %.2f\n ", resoltDedutivies );
-        System.out.printf("Gastos dedutíveis: %.2f\n ", gEducacionais );
-
-        System.out.println("\nRESUMO: ");
-
-        System.out.printf("Imposto bruto total: %.2f\n " , resolt + resoltServico +resoltCapital);
-
+        System.out.println("\nRESUMO:");
+        System.out.printf("Imposto bruto total: %.2f\n", impostoBrutoTotal);
+        System.out.printf("Abatimento: %.2f\n", gastosDedutiveis);
+        System.out.printf("Imposto devido: %.2f\n", impostoFinal);
 
         sc.close();
-
-
-
     }
 }
+
