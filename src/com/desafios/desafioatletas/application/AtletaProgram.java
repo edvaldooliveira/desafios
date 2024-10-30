@@ -7,15 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
-
 public class AtletaProgram {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
+
+        double somaPesos  = 0, alturaTotalMulheres = 0;
+        int countMulheres = 0, countHomens         = 0;
+
         Scanner sc = new Scanner(System.in);
 
-
         List<Atleta> atletas = new ArrayList<>();
-
 
         System.out.print("Qual a quantidade de atletas? ");
         int numeroAtletas = sc.nextInt();
@@ -66,10 +67,6 @@ public class AtletaProgram {
 
         // Relatório
         System.out.println("\nRELATÓRIO:");
-        double somaPesos = 0;
-        double alturaTotalMulheres = 0;
-        int countMulheres = 0;
-        int countHomens = 0;
         Atleta atletaMaisAlto = atletas.get(0);
 
         for (Atleta atleta : atletas) {
