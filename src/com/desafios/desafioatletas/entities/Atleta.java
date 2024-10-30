@@ -1,6 +1,6 @@
 package com.desafios.desafioatletas.entities;
 
-class Atleta {
+public class Atleta {
     private String nome;
     private char sexo;
     private double altura;
