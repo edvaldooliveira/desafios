@@ -41,7 +41,7 @@ public class Champion {
 
     public void takeDamage(Champion opponent) {
         int damage = Math.max(opponent.getAttack() - this.armor, 1);
-        this.life = Math.max(this.life - damage, 0); 
+        this.life = Math.max(this.life - damage, 0);
     }
 
     public String status() {
