@@ -66,8 +66,12 @@ public class Bill {
         return 0;
     }
 
-    public double tichet() {
-        return 0;
+    public double tichet(double tichet) {
+        if (gender == 'M') {
+            return 10.0;
+        } else {
+            return 8.0;
+        }
     }
 
     public double total() {
