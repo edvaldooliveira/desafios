@@ -60,4 +60,13 @@ public class Champion {
         return this.name + ": " + this.life + " de vida";
     }
 
+    @Override
+    public String toString() {
+        return "Champion{" +
+                "name='" + name + '\'' +
+                ", life=" + life +
+                ", attack=" + attack +
+                ", armor=" + armor +
+                '}';
+    }
 }
