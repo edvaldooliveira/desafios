@@ -52,9 +52,15 @@ public class Bill {
 
 
 
-    public double cover() {
-        return 0;
+    public double cover(double consumo) {
+        if (consumo <= 30) {
+            return 4.00;
+        } else {
+            return 0.0;
+        }
+
     }
+
 
     public double feeding() {
         return 0;

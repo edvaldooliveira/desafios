@@ -22,14 +22,21 @@ public class Program {
 
         Bill bill = new Bill(gender, beer, barbecue, sofDrink);
 
-        System.out.println(bill.getBarbecue());
-       int resulBeer = bill.getBeer() * 5;
-       int resulBarbecue = bill.getBarbecue() * 7;
-       double consumo = resulBeer + resulBarbecue;
+      double consumo = bill.getBeer() * 5 + bill.getBarbecue() * 7;
 
+      double resulCouvert = bill.cover(consumo);
 
         System.out.println("\nRELATÓRIO: ");
-        System.out.printf("Consumo = %.2f", consumo);
+        System.out.printf("Consumo = R$ %.2f\n", consumo);
+
+
+        if (resulCouvert > 30) {
+            System.out.printf("Couvert = R$ %.2f ", resulCouvert);
+        } else {
+            System.out.println("Isento de Couvert ");
+        }
+
+
 
         sc.close();
 
