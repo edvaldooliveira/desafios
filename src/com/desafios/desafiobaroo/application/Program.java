@@ -10,7 +10,7 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Sexo: ");
+        System.out.print("\nSexo: ");
         char gender = sc.next().charAt(0);
         System.out.print("Quantidade de cervejas: ");
         int beer = sc.nextInt();
@@ -19,26 +19,23 @@ public class Program {
         System.out.print("Quantidade de espetinhos: ");
         int barbecue = sc.nextInt();
 
+          Bill bill = new Bill(gender, beer, barbecue, sofDrink);
+          double consumo = bill.getBeer() * 5 + bill.getBarbecue() * 7 + bill.getSofDrink() * 3;
+          double resulCouvert = bill.cover(consumo);
 
-        Bill bill = new Bill(gender, beer, barbecue, sofDrink);
+        System.out.println();
+        System.out.print(" RELATÓRIO:");
+        System.out.printf("\n Consumo = R$ %.2f\n", consumo);
 
-      double consumo = bill.getBeer() * 5 + bill.getBarbecue() * 7 + bill.getSofDrink() * 3;
-
-      double resulCouvert = bill.cover(consumo);
-
-        System.out.println("\nRELATÓRIO: ");
-        System.out.printf("Consumo = R$ %.2f\n", consumo);
-
-        if (resulCouvert > 30) {
-            System.out.printf("Couvert = R$ %.2f ", resulCouvert);
+        if (consumo < 30) {
+            System.out.printf(" Couvert = R$ %.2f \n", resulCouvert);
         } else {
-            System.out.println("Isento de Couvert ");
+            System.out.println(" Isento de Couvert ");
         }
-        System.out.printf("Ingresso = R$ %.2f ", bill.tichet(gender));
-
-
+        System.out.printf(" Ingresso = R$ %.2f\n\n ", bill.tichet(gender));
+        System.out.printf("Valor a pagar = R$ %.2f\n", bill.total(consumo + resulCouvert));
+        System.out.println(" ***************---------");
 
         sc.close();
-
     }
 }
