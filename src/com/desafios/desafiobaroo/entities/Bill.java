@@ -50,6 +50,8 @@ public class Bill {
         this.sofDrink = sofDrink;
     }
 
+
+
     public double cover() {
         return 0;
     }
