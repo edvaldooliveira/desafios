@@ -58,8 +58,21 @@ public class TaxPayer {
         this.educationSpending = educationSpending;
     }
 
-    
+
     //Métodos para serem implementados
+    public double impostoSobreSalario(double salaryIncome) {
+        double rendaMensal = salaryIncome / 12;
+        if (rendaMensal < 3000) {
+            return 0.0;
+        } else if (rendaMensal < 5000) {
+            return salaryIncome * 0.1;
+        } else {
+            return salaryIncome * 0.2;
+        }
+
+    }
+
+
     public double salaryTax() {
         return 0;
     }
