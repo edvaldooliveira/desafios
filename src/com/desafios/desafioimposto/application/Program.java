@@ -5,13 +5,11 @@ import com.desafios.desafioimposto.entities.RendaAnualCalculadora;
 import java.util.Locale;
 import java.util.Scanner;
 
+
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
-        RendaAnualCalculadora calculadora = new RendaAnualCalculadora();
-
 
         // Entrada de dados
         System.out.print("\nRenda anual com salário: ");
@@ -26,14 +24,17 @@ public class Program {
         System.out.print("Gastos educacionais: ");
         double gastosEducacionais = sc.nextDouble();
 
-        // Cálculos de impostos
+        // Criação do objeto calculadora
+        RendaAnualCalculadora calculadora = new RendaAnualCalculadora(rendaAnualSalario, rendaAnualServico, rendaAnualCapital);
+
+        // Cálculo dos impostos
         double impostoSalario = calculadora.impostoSalario(rendaAnualSalario);
         double impostoServico = calculadora.impostoServico(rendaAnualServico);
         double impostoCapital = calculadora.impostoCapital(rendaAnualCapital);
 
         double impostoBrutoTotal = impostoSalario + impostoServico + impostoCapital;
 
-        // Cálculo de deduções
+        // Cálculo das deduções
         double maximoDedutivel = impostoBrutoTotal * 0.3;
         double gastosDedutiveis = Math.min(gastosMedicos + gastosEducacionais, maximoDedutivel);
         double gDedutiveis =  gastosEducacionais + gastosMedicos;
@@ -44,12 +45,11 @@ public class Program {
         System.out.println("CONSOLIDADO DE RENDA:");
         System.out.printf("Imposto sobre salário: %.2f\n", impostoSalario);
         System.out.printf("Imposto sobre serviços: %.2f\n", impostoServico);
-        System.out.printf("Imposto sobre ganho de capital: %.2f\n", impostoCapital);
+        System.out.printf("Imposto sobre ganho de capital: %.2f\n",  impostoCapital);
 
         System.out.println("\nDEDUÇÕES:");
         System.out.printf("Máximo dedutível: %.2f\n", maximoDedutivel);
         System.out.printf("Gastos dedutíveis: %.2f\n", gDedutiveis);
-
 
         System.out.println("\nRESUMO:");
         System.out.printf("Imposto bruto total: %.2f\n", impostoBrutoTotal);
@@ -58,4 +58,5 @@ public class Program {
 
         sc.close();
     }
+
 }
