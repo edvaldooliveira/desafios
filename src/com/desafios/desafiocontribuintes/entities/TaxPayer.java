@@ -9,7 +9,6 @@ public class TaxPayer {
 
     public TaxPayer() {
     }
-
     public TaxPayer(Double salaryIncome, Double servivesIncome, Double capitalIncome, Double healthSpending, Double educationSpending) {
         this.salaryIncome = salaryIncome;
         this.servivesIncome = servivesIncome;
@@ -17,49 +16,36 @@ public class TaxPayer {
         this.healthSpending = healthSpending;
         this.educationSpending = educationSpending;
     }
-
     public Double getSalaryIncome() {
         return salaryIncome;
     }
-
     public void setSalaryIncome(Double salaryIncome) {
         this.salaryIncome = salaryIncome;
     }
-
     public Double getServivesIncome() {
         return servivesIncome;
     }
-
     public void setServivesIncome(Double servivesIncome) {
         this.servivesIncome = servivesIncome;
     }
-
     public Double getCapitalIncome() {
         return capitalIncome;
     }
-
     public void setCapitalIncome(Double capitalIncome) {
         this.capitalIncome = capitalIncome;
     }
-
     public Double getHealthSpending() {
         return healthSpending;
     }
-
     public void setHealthSpending(Double healthSpending) {
         this.healthSpending = healthSpending;
     }
-
     public Double getEducationSpending() {
         return educationSpending;
     }
-
     public void setEducationSpending(Double educationSpending) {
         this.educationSpending = educationSpending;
     }
-
-
-    //Métodos para serem implementados
     public double impostoSobreSalario(double salaryIncome) {
         double rendaMensal = salaryIncome / 12;
         if (rendaMensal < 3000) {
@@ -69,28 +55,22 @@ public class TaxPayer {
         } else {
             return salaryIncome * 0.2;
         }
-
     }
-
-
     public double salaryTax() {
-        return 0;
+        return capitalIncome * 0.2;
     }
-
     public double servicesTax() {
-        return 0;
+        return servivesIncome * 0.15;
     }
-
     public double grossTax() {
-        return 0;
+        return salaryTax() + servicesTax() + capitalIncome;
     }
-
     public double taxRebate() {
-        return 0;
+        double totalDeduction = healthSpending + educationSpending;
+        double maxRebate = grossTax() * 0.3;
+        return Math.min(totalDeduction, maxRebate);
     }
-
     public double netTax() {
-        return 0;
+        return grossTax() - taxRebate();
     }
-
 }
