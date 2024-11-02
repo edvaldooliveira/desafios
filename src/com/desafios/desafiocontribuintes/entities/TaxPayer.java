@@ -2,31 +2,33 @@ package com.desafios.desafiocontribuintes.entities;
 
 public class TaxPayer {
     private Double salaryIncome;
-    private Double servivesIncome;
+    private Double servicesIncome;
     private Double capitalIncome;
     private Double healthSpending;
     private Double educationSpending;
 
     public TaxPayer() {
     }
-    public TaxPayer(Double salaryIncome, Double servivesIncome, Double capitalIncome, Double healthSpending, Double educationSpending) {
+
+    public TaxPayer(Double salaryIncome, Double servicesIncome, Double capitalIncome, Double healthSpending, Double educationSpending) {
         this.salaryIncome = salaryIncome;
-        this.servivesIncome = servivesIncome;
+        this.servicesIncome = servicesIncome;
         this.capitalIncome = capitalIncome;
         this.healthSpending = healthSpending;
         this.educationSpending = educationSpending;
     }
+
     public Double getSalaryIncome() {
         return salaryIncome;
     }
     public void setSalaryIncome(Double salaryIncome) {
         this.salaryIncome = salaryIncome;
     }
-    public Double getServivesIncome() {
-        return servivesIncome;
+    public Double getServicesIncome() {
+        return servicesIncome;
     }
-    public void setServivesIncome(Double servivesIncome) {
-        this.servivesIncome = servivesIncome;
+    public void setServicesIncome(Double servicesIncome) {
+        this.servicesIncome = servicesIncome;
     }
     public Double getCapitalIncome() {
         return capitalIncome;
@@ -46,24 +48,24 @@ public class TaxPayer {
     public void setEducationSpending(Double educationSpending) {
         this.educationSpending = educationSpending;
     }
-    public double impostoSobreSalario(double salaryIncome) {
-        double rendaMensal = salaryIncome / 12;
-        if (rendaMensal < 3000) {
+    public double salaryTax() {
+        double monthlyIncome = salaryIncome / 12;
+        if (monthlyIncome < 3000) {
             return 0.0;
-        } else if (rendaMensal < 5000) {
+        } else if (monthlyIncome < 5000) {
             return salaryIncome * 0.1;
         } else {
             return salaryIncome * 0.2;
         }
     }
-    public double salaryTax() {
+    public double servicesTax() {
+        return servicesIncome * 0.15;
+    }
+    public double capitalTax() {
         return capitalIncome * 0.2;
     }
-    public double servicesTax() {
-        return servivesIncome * 0.15;
-    }
     public double grossTax() {
-        return salaryTax() + servicesTax() + capitalIncome;
+        return salaryTax() + servicesTax() + capitalTax();
     }
     public double taxRebate() {
         double totalDeduction = healthSpending + educationSpending;
@@ -74,3 +76,4 @@ public class TaxPayer {
         return grossTax() - taxRebate();
     }
 }
+
