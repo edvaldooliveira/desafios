@@ -33,7 +33,16 @@ public class Program {
             taxPayers.add(taxpayer);
         }
 
-       
+        System.out.println();
+        System.out.println("RELATÓRIO DE IMPOSTO:");
+        for (int i = 0; i < taxPayers.size(); i++) {
+            TaxPayer taxpayer = taxPayers.get(i);
+            System.out.printf("Contribuinte %d:%n", i + 1);
+            System.out.printf("Imposto bruto: %.2f%n", taxpayer.grossTax());
+            System.out.printf("Abatimento: %.2f%n", taxpayer.taxRebate());
+            System.out.printf("Imposto devido: %.2f%n", taxpayer.netTax());
+            System.out.println();
+        }
         sc.close();
     }
 }
