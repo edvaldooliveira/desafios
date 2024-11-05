@@ -8,8 +8,8 @@ public class Employee {
     }
 
     public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
+        setName(name); // Validação ao definir o nome
+        setSalary(salary); // Validação ao definir o salário
     }
 
     public String getName() {
@@ -17,7 +17,11 @@ public class Employee {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Nome não pode ser nulo ou vazio");
+        }
     }
 
     public double getSalary() {
@@ -25,6 +29,10 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
-        this.salary = salary;
+        if (salary >= 0) {
+            this.salary = salary;
+        } else {
+            throw new IllegalArgumentException("Salário não pode ser negativo");
+        }
     }
 }
