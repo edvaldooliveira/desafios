@@ -1,5 +1,6 @@
 package com.desafios.desafioempregados.application;
 
+import com.desafios.desafioempregados.entities.Address;
 import com.desafios.desafioempregados.entities.Department;
 import com.desafios.desafioempregados.entities.Employee;
 
@@ -18,7 +19,18 @@ public class Program {
         int payDay = sc.nextInt();
         sc.nextLine(); // Consumir a quebra de linha
 
-        // Cria o departamento
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Telefone: ");
+        String phone = sc.nextLine();
+
+
+        // Cria Adress
+        Address address = new Address(email, phone);
+
+
+                // Cria o departamento
         Department department = new Department(deptName, payDay);
 
         System.out.print("Quantos funcionários você deseja adicionar? ");
