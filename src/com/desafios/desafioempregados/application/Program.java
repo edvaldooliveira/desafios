@@ -55,8 +55,10 @@ public class Program {
         // Exibe informações do departamento e folha de pagamento
         System.out.println();
         System.out.println("RELATÓRIO DO DEPARTAMENTO:");
+        System.out.printf("Departamento Vendas = %.2f%n", department.payroll());
+        System.out.println("Pagamento realizado no dia" + department.getPayDay());
+
         System.out.println("Nome do departamento:" + department.getName());
-        System.out.println("Dia do pagamento:" + department.getPayDay());
         System.out.println("Funcionários: " + department.getName());
         System.out.printf("Folha de pagamento total: %.2f%n", department.payroll());
 
