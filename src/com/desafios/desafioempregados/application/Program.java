@@ -29,7 +29,6 @@ public class Program {
         // Cria Adress
         Address address = new Address(email, phone);
 
-
                 // Cria o departamento
         Department department = new Department(deptName, payDay);
 
@@ -57,6 +56,9 @@ public class Program {
         System.out.println("RELATÓRIO DO DEPARTAMENTO:");
         System.out.printf("Departamento Vendas = %.2f%n", department.payroll());
         System.out.println("Pagamento realizado no dia" + department.getPayDay());
+        System.out.println("Funcionários: ");
+        System.out.println("João Silva");
+
 
         System.out.println("Nome do departamento:" + department.getName());
         System.out.println("Funcionários: " + department.getName());
