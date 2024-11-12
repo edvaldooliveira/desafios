@@ -54,15 +54,13 @@ public class Program {
         // Exibe informações do departamento e folha de pagamento
         System.out.println();
         System.out.println("RELATÓRIO DO DEPARTAMENTO:");
-        System.out.printf("Departamento Vendas = %.2f%n", department.payroll());
-        System.out.println("Pagamento realizado no dia" + department.getPayDay());
+        System.out.printf("Departamento Vendas = R$ %.2f%n ", department.payroll());
+        System.out.println("Pagamento realizado no dia " + department.getPayDay());
         System.out.println("Funcionários: ");
         System.out.println("João Silva");
 
 
-        System.out.println("Nome do departamento:" + department.getName());
-        System.out.println("Funcionários: " + department.getName());
-        System.out.printf("Folha de pagamento total: %.2f%n", department.payroll());
+        System.out.printf("Para dúvidas favor entrar em contato: " + address.getEmail());
 
         sc.close();
     }
