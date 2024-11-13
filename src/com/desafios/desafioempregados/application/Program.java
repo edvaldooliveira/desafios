@@ -7,6 +7,9 @@ import com.desafios.desafioempregados.entities.Employee;
 import java.util.Locale;
 import java.util.Scanner;
 
+
+
+
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
@@ -29,7 +32,7 @@ public class Program {
         // Cria Adress
         Address address = new Address(email, phone);
 
-                // Cria o departamento
+        // Cria o departamento
         Department department = new Department(deptName, payDay);
 
         System.out.print("Quantos funcionários você deseja adicionar? ");
@@ -57,7 +60,7 @@ public class Program {
         System.out.printf("Departamento Vendas = R$ %.2f%n ", department.payroll());
         System.out.println("Pagamento realizado no dia " + department.getPayDay());
         System.out.println("Funcionários: ");
-        System.out.println("João Silva");
+       //Ajustando o relatário
 
 
         System.out.printf("Para dúvidas favor entrar em contato: " + address.getEmail());
@@ -65,4 +68,3 @@ public class Program {
         sc.close();
     }
 }
-
