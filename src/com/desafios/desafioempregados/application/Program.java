@@ -40,6 +40,9 @@ public class Program {
         sc.nextLine(); // Consumir a quebra de linha
 
         // Adiciona empregados ao departamento
+
+
+        Employee employee = null;
         for (int i = 1; i <= numEmployees; i++) {
             System.out.println("Dados do funcionário " + i + ":");
             System.out.print("Nome: ");
@@ -50,9 +53,15 @@ public class Program {
             sc.nextLine(); // Consumir a quebra de linha
 
             // Cria o empregado e adiciona ao departamento
-            Employee employee = new Employee(name, salary);
+            employee = new Employee(name, salary);
             department.addEmployee(employee);
+
+           // System.out.println("- " + employee.getName());
+
         }
+
+        System.out.println("- " + employee.getName());
+
 
         // Exibe informações do departamento e folha de pagamento
         System.out.println();
@@ -60,7 +69,6 @@ public class Program {
         System.out.printf("Departamento Vendas = R$ %.2f%n ", department.payroll());
         System.out.println("Pagamento realizado no dia " + department.getPayDay());
         System.out.println("Funcionários: ");
-       //Ajustando o relatário
 
 
         System.out.printf("Para dúvidas favor entrar em contato: " + address.getEmail());

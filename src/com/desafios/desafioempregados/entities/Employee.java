@@ -6,6 +6,9 @@ public class Employee {
 
     public Employee() {
     }
+    public Employee(String name) {
+        setName(name); // Validação ao definir o nome
+    }
 
     public Employee(String name, double salary) {
         setName(name); // Validação ao definir o nome
