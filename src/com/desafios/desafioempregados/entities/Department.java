@@ -9,57 +9,33 @@ public class Department {
     private int payDay;
     private List<Employee> employees;
 
-    public Department() {
-        employees = new ArrayList<>();
-    }
-
     public Department(String name, int payDay) {
-        setName(name); // Validação de nome
-        setPayDay(payDay); // Validação de payDay
-        employees = new ArrayList<>();
+        this.name = name;
+        this.payDay = payDay;
+        this.employees = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
     }
 
-    public void setName(String name) {
-        if (name != null && !name.trim().isEmpty()) {
-            this.name = name;
-        } else {
-            throw new IllegalArgumentException("Nome do departamento não pode ser nulo ou vazio");
+    public double payroll() {
+        double total = 0.0;
+        for (Employee emp : employees) {
+            total += emp.getSalary();
         }
+        return total;
     }
 
     public int getPayDay() {
         return payDay;
     }
 
-    public void setPayDay(int payDay) {
-        if (payDay >= 1 && payDay <= 31) {
-            this.payDay = payDay;
-        } else {
-            throw new IllegalArgumentException("Dia de pagamento deve ser entre 1 e 31");
-        }
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
-    public void addEmployee(Employee employee) {
-        if (employee != null && !employees.contains(employee)) {
-            employees.add(employee);
-        }
+    public String getName() {
+        return name;
     }
-
-    public void removeEmployee(Employee employee) {
-        employees.remove(employee);
-    }
-
-    public double payroll() {
-        double totalPayroll = 0.0;
-        for (Employee employee : employees) {
-            totalPayroll += employee.getSalary();
-        }
-        return totalPayroll;
-    }
-
-
 }

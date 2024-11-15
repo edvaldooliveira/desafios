@@ -1,5 +1,6 @@
 package com.desafios.desafioempregados.application;
 
+
 import com.desafios.desafioempregados.entities.Address;
 import com.desafios.desafioempregados.entities.Department;
 import com.desafios.desafioempregados.entities.Employee;
@@ -7,18 +8,16 @@ import com.desafios.desafioempregados.entities.Employee;
 import java.util.Locale;
 import java.util.Scanner;
 
-
-
-
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+
         System.out.print("Nome do departamento: ");
         String deptName = sc.nextLine();
 
-        System.out.print("Dia de pagamento: ");
+        System.out.print("Dia do pagamento: ");
         int payDay = sc.nextInt();
         sc.nextLine(); // Consumir a quebra de linha
 
@@ -29,20 +28,14 @@ public class Program {
         String phone = sc.nextLine();
 
 
-        // Cria Adress
         Address address = new Address(email, phone);
-
-        // Cria o departamento
         Department department = new Department(deptName, payDay);
 
-        System.out.print("Quantos funcionários você deseja adicionar? ");
+        System.out.print("Quantos funcionários tem o departamento? ");
         int numEmployees = sc.nextInt();
-        sc.nextLine(); // Consumir a quebra de linha
-
-        // Adiciona empregados ao departamento
+        sc.nextLine();
 
 
-        Employee employee = null;
         for (int i = 1; i <= numEmployees; i++) {
             System.out.println("Dados do funcionário " + i + ":");
             System.out.print("Nome: ");
@@ -50,28 +43,22 @@ public class Program {
 
             System.out.print("Salário: ");
             double salary = sc.nextDouble();
-            sc.nextLine(); // Consumir a quebra de linha
+            sc.nextLine();
 
-            // Cria o empregado e adiciona ao departamento
-            employee = new Employee(name, salary);
+
+            Employee employee = new Employee(name, salary);
             department.addEmployee(employee);
-
-           // System.out.println("- " + employee.getName());
-
         }
 
-        System.out.println("- " + employee.getName());
-
-
-        // Exibe informações do departamento e folha de pagamento
-        System.out.println();
-        System.out.println("RELATÓRIO DO DEPARTAMENTO:");
-        System.out.printf("Departamento Vendas = R$ %.2f%n ", department.payroll());
+     
+        System.out.println("\nFOLHA DE PAGAMENTO:");
+        System.out.printf("Departamento %s = R$ %.2f%n", department.getName(), department.payroll());
         System.out.println("Pagamento realizado no dia " + department.getPayDay());
-        System.out.println("Funcionários: ");
-
-
-        System.out.printf("Para dúvidas favor entrar em contato: " + address.getEmail());
+        System.out.println("Funcionários:");
+        for (Employee emp : department.getEmployees()) {
+            System.out.println(emp.getName());
+        }
+        System.out.println("Para dúvidas favor entrar em contato: " + address.getEmail());
 
         sc.close();
     }
