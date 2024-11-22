@@ -50,7 +50,7 @@ public class Program {
             department.addEmployee(employee);
         }
 
-     
+
         System.out.println("\nFOLHA DE PAGAMENTO:");
         System.out.printf("Departamento %s = R$ %.2f%n", department.getName(), department.payroll());
         System.out.println("Pagamento realizado no dia " + department.getPayDay());
