@@ -2,16 +2,19 @@ package com.desafios.desafioplataformadeensino.entities;
 
 public class Lesson {
     private String title;
-    public int durantion;
+    private int duration; // Corrigido o nome do atributo
 
+    // Construtor padrão
     public Lesson() {
     }
 
-    public Lesson(String title, int durantion) {
+    // Construtor com parâmetros
+    public Lesson(String title, int duration) {
         this.title = title;
-        this.durantion = durantion;
+        this.duration = duration;
     }
 
+    // Getters e setters
     public String getTitle() {
         return title;
     }
@@ -20,19 +23,20 @@ public class Lesson {
         this.title = title;
     }
 
-    public int getDurantion() {
-        return durantion;
+    public int getDuration() { // Nome do método também corrigido
+        return duration;
     }
 
-    public void setDurantion(int durantion) {
-        this.durantion = durantion;
+    public void setDuration(int duration) { // Nome do método também corrigido
+        this.duration = duration;
     }
 
+    // Método toString para representação textual
     @Override
     public String toString() {
         return "Lesson{" +
                 "title='" + title + '\'' +
-                ", durantion=" + durantion +
+                ", duration=" + duration +
                 '}';
     }
 }
