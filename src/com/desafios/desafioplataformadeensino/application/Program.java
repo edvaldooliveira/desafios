@@ -16,7 +16,7 @@ public class Program {
 
         System.out.print("Quantas aulas tem o curso? ");
         int numLessons = sc.nextInt();
-        sc.nextLine(); // Consumir a quebra de linha
+        sc.nextLine();
 
         List<Lesson> lessons = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class Program {
             System.out.println("Dados da " + i + "ª aula:");
             System.out.print("Conteúdo ou tarefa (c/t)? ");
             char type = sc.next().charAt(0);
-            sc.nextLine(); // Consumir a quebra de linha
+            sc.nextLine();
 
             System.out.print("Título: ");
             String title = sc.nextLine();
@@ -35,7 +35,7 @@ public class Program {
 
                 System.out.print("Duração em segundos: ");
                 int duration = sc.nextInt();
-                sc.nextLine(); // Consumir a quebra de linha
+                sc.nextLine();
 
                 lessons.add(new ContentLesson(title, videoUrl, duration));
             } else if (type == 't') {
@@ -44,13 +44,12 @@ public class Program {
 
                 System.out.print("Quantidade de questões: ");
                 int questionCount = sc.nextInt();
-                sc.nextLine(); // Consumir a quebra de linha
+                sc.nextLine();
 
                 lessons.add(new Task(title, description, questionCount));
             }
         }
-
-        // Calcula e exibe a duração total
+        
         int totalDuration = 0;
         for (Lesson lesson : lessons) {
             totalDuration += lesson.getDuration();
