@@ -49,7 +49,7 @@ public class Program {
                 lessons.add(new Task(title, description, questionCount));
             }
         }
-        
+
         int totalDuration = 0;
         for (Lesson lesson : lessons) {
             totalDuration += lesson.getDuration();

@@ -7,11 +7,11 @@ public class Video {
     private String url;
     private int seconds;
 
-    // Construtor padrão
+
     public Video() {
     }
 
-    // Construtor com parâmetros
+
     public Video(String url, int seconds) {
         this.url = url;
         this.seconds = seconds;
@@ -34,14 +34,14 @@ public class Video {
         this.seconds = seconds;
     }
 
-    // Método para converter segundos em minutos e segundos
+
     public String getFormattedDuration() {
         int minutes = seconds / 60;
         int remainingSeconds = seconds % 60;
         return String.format("%d min %d sec", minutes, remainingSeconds);
     }
 
-    // Método toString para exibir informações do vídeo
+
     @Override
     public String toString() {
         return "Video{" +
