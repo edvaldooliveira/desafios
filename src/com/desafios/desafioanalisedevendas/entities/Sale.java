@@ -7,11 +7,11 @@ public class Sale {
     private Integer items;
     private double total;
 
-    // Construtor padrão
+   
     public Sale() {
     }
 
-    // Construtor com parâmetros
+
     public Sale(Integer month, Integer year, String seller, Integer items, double total) {
         this.month = month;
         this.year = year;
@@ -61,7 +61,7 @@ public class Sale {
         this.total = total;
     }
 
-    // Método toString para exibir informações da venda
+
     @Override
     public String toString() {
         return "Sale{" +
