@@ -1,4 +1,4 @@
-package com.desafios.desafioanalisedevendas.entities;
+package com.desafios.desafioanalisedevendas1.entities;
 
 import java.util.Objects;
 

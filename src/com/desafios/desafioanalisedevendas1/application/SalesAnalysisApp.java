@@ -1,7 +1,7 @@
-package com.desafios.desafioanalisedevendas.application;
+package com.desafios.desafioanalisedevendas1.application;
 
-import com.desafios.desafioanalisedevendas.entities.Sale;
-import com.desafios.desafioanalisedevendas.entities.SalesProcessor;
+import com.desafios.desafioanalisedevendas1.entities.Sale;
+import com.desafios.desafioanalisedevendas1.entities.SalesProcessor;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,7 +12,7 @@ public class SalesAnalysisApp {
         Scanner sc = new Scanner(System.in);
         SalesProcessor processor = new SalesProcessor();
 
-      
+
         System.out.print("Entre o caminho do arquivo: ");
         String filePath = sc.nextLine();
 
