@@ -12,7 +12,7 @@ public class SalesAnalysisApp {
         Scanner sc = new Scanner(System.in);
         SalesProcessor processor = new SalesProcessor();
 
-        // Solicitar o caminho do arquivo
+      
         System.out.print("Entre o caminho do arquivo: ");
         String filePath = sc.nextLine();
 
