@@ -23,7 +23,7 @@ public class Program {
         sc.nextLine();
 
         Champion champion1 = new Champion(name1, life1, attack1, armor1);
-
+        System.out.println("\n---------");
         System.out.println("Digite os dados do segundo campeão:");
         System.out.print("Nome: ");
         String name2 = sc.nextLine();
@@ -41,7 +41,8 @@ public class Program {
         System.out.print("\nQuantos turnos você deseja executar? ");
         int turnos = sc.nextInt();
 
-
+         System.out.println("\n---------");
+        
         for (int i = 1; i <= turnos; i++) {
             System.out.printf("Resultado do turno %d:\n", i);
             champion1.takeDamage(champion2);
