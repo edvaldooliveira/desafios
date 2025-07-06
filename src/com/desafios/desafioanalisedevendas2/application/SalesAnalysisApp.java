@@ -14,18 +14,18 @@ public class SalesAnalysisApp {
         Scanner sc = new Scanner(System.in);
         SalesProcessor processor = new SalesProcessor();
 
-        // Solicitar o caminho do arquivo
+       
         System.out.print("Entre o caminho do arquivo: ");
         String filePath = sc.nextLine();
 
         try {
-            // Lendo vendas do arquivo
+           
             List<Sale> salesList = processor.readSalesFromFile(filePath);
 
-            // Calculando total de vendas por vendedor
+           
             Map<String, Double> totalSalesBySeller = processor.calculateTotalSalesBySeller(salesList);
 
-            // Exibir total de vendas por vendedor
+           
             System.out.println("\nTotal de vendas por vendedor:");
             totalSalesBySeller.forEach((seller, total) ->
                     System.out.printf("%s - R$ %.2f%n", seller, total));
