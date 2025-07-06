@@ -31,11 +31,12 @@ public class AtletaProgram {
             char sexo;
             while (true) {
                 System.out.print("Sexo (M/F): ");
+
                 sexo = sc.next().toUpperCase().charAt(0);
                 if (sexo == 'M' || sexo == 'F') {
                     break;
                 } else {
-                    System.out.println("Valor inválido! Favor digitar F ou M.");
+                    System.out.println("Valor inválido! Favor digitar F ou M: ");
                 }
             }
 
@@ -46,7 +47,7 @@ public class AtletaProgram {
                 if (altura > 0) {
                     break;
                 } else {
-                    System.out.println("Valor inválido! Favor digitar um valor positivo.");
+                    System.out.print("Valor inválido! Favor digitar um valor positivo: ");
                 }
             }
 
@@ -57,7 +58,7 @@ public class AtletaProgram {
                 if (peso > 0) {
                     break;
                 } else {
-                    System.out.println("Valor inválido! Favor digitar um valor positivo.");
+                    System.out.print("Valor inválido! Favor digitar um valor positivo: ");
                 }
             }
 
@@ -66,7 +67,7 @@ public class AtletaProgram {
         }
 
         // Relatório
-        System.out.println("\nRELATÓRIO:");
+        System.out.println("\nRELATÓRIO: ");
         Atleta atletaMaisAlto = atletas.get(0);
 
         for (Atleta atleta : atletas) {
@@ -91,7 +92,14 @@ public class AtletaProgram {
         System.out.printf("Peso médio dos atletas: %.2f\n", pesoMedio);
         System.out.println("Atleta mais alto: " + atletaMaisAlto.getNome());
         System.out.printf("Porcentagem de homens: %.1f %%\n", porcentagemHomens);
-        System.out.printf("Altura média das mulheres: %.2f\n", alturaMediaMulheres);
+
+        if (alturaMediaMulheres > 0) {
+            System.out.printf("Altura média das mulheres: %.2f\n", alturaMediaMulheres);
+        }
+        else {
+            System.out.println("Não há mulheres cadastradas ");
+        }
+
 
         sc.close();
     }
