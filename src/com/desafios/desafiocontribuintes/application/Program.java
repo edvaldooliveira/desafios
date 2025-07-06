@@ -17,6 +17,7 @@ public class Program {
         List<TaxPayer> taxPayers = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
+             System.out.println("\n");
             System.out.println("Digite os dados do " + i + "º contribuinte:");
             System.out.print("Renda anual com salário: ");
             double salaryIncome = sc.nextDouble();
